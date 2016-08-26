@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="assets/css/faq_reset.css">
+	<link rel="stylesheet" href="assets/css/faq_style.css">
+	<script src="assets/js/modernizr.js"></script>
+	<title>Monitorito: Frequently Asked Questions</title>
+</head>
+<body>
+<header>
+	<h1><a href="index.html">Monitorito</a> - Frequently Asked Questions</h1>
+</header>
+<section class="cd-faq">
+	<ul class="cd-faq-categories">
+		<li><a class="selected" href="#basics">Basics</a></li>
+		<li><a href="#statistics">Statistics</a></li>
+		<li><a href="#other">Other Functionalities</a></li>
+	</ul>
+
+	<div class="cd-faq-items">
+		<ul id="basics" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Basics</h2></li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">Do I need an account to install the application ?</a>
+				<div class="cd-faq-content">
+					<p>No account is needed to install and use the application. The application is installed as browser extension. So, you only have to first download the browser that you want to use and then install the extension through the Extensions Store of this browser. You can find the corresponding links in the home page.</p>
+				</div>
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">Do you have access to my data ?</a>
+				<div class="cd-faq-content">
+					<p>No, your data are safe. The data are only stored locally in the user's computer and the application does not send any data from the user's browsing activity to anyone. </p>
+				</div>
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">What data does the application capture ?</a>
+				<div class="cd-faq-content">
+					<p>The application only captures requests being made by the browser from which the application is running, so requests being made by other browsers or by the system (e.g. system updates) are not captured by the application. Furthermore, the application only captures requests being made after the application has started executing.</p>
+				</div>
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">What if my question is not included in this section ?</a>
+				<div class="cd-faq-content">
+					<p>If you have a question missing from this section, feel free to send us your question <a href="mailto:monitorito.faq@gmail.com" target="_top">here</a>. We will try to reply as soon as possible and we will consider adding your question here.</p>
+				</div>
+			</li>
+		</ul>
+
+		<ul id="statistics" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Statistics</h2></li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">What are the exact statistics calculated for the graph ?</a>
+				<div class="cd-faq-content">
+					<p>The statistics calculated about the nodes of the graph are the following: <br>
+						&nbsp; &nbsp; &nbsp; &nbsp;	- percentage of first-party domains (visited directly by the user) <br>
+						&nbsp; &nbsp; &nbsp; &nbsp;	- percentage of third-party domains (visited in the background, as dependencies) <br>
+						There are 4 different categories of edges in the graph depending on the following criteria: incoming vs outgoing, referral vs non-referral. For each different category, the following statistics are being calculated across all the nodes of the graph: <br>
+						&nbsp; &nbsp; &nbsp; &nbsp;	- maximum <br>
+						&nbsp; &nbsp; &nbsp; &nbsp;	- minimum <br>
+						&nbsp; &nbsp; &nbsp; &nbsp;	- average <br>
+						&nbsp; &nbsp; &nbsp; &nbsp;	- standard deviation <br>
+					</p>
+				</div>
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">How are the per-node metrics calculated ?</a>
+				<div class="cd-faq-content">
+					<p>Currently, there are 4 defined per-node metrics and they are calculated as explained below: <br>
+						&nbsp; &nbsp; &nbsp; &nbsp;	- Phishing Metric: 1 divided by the total number of outgoing and incoming edges <br>
+						&nbsp; &nbsp; &nbsp; &nbsp;	- Tracking Metric: ratio of incoming referral edges of the selected domain to the maximum number of incoming referral edges of a node across the whole graph  <br>
+						&nbsp; &nbsp; &nbsp; &nbsp;	- Tracking Cookies Metric: percentage of third-party cookies to total number of cookies of the selected domain domain <br>
+						&nbsp; &nbsp; &nbsp; &nbsp;	- Leaking Metric: sum of squares of values of Tracking Metric for all neighbour nodes reached by outgoing referral edges from the selected domain, divided by the number of these nodes <br>
+					</p>
+				</div>
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">Can I define my own node metrics ?</a>
+				<div class="cd-faq-content">
+					<p>Currently, there is not a capability to add new user-defined metrics from the user interface. However, one can easily define a new metric, slightly modifying the source code and the new metric will be accordingly included in all other functionalities, such as filtering. The source code is available <a href="https://github.com/monitorito/monitorito">here</a>.</p>
+				</div>
+			</li>
+		</ul>
+
+		<ul id="other" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Other Functionalities</h2></li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">What's the purpose of clustering ?</a>
+				<div class="cd-faq-content">
+					<p>You can use clustering to aggregate multiple domains, forming a new node. A common case is when you want to handle several sub-domains as a single node. You can achieve this by providing the root domain in the clustering form. Note that statistics are also calculated for cluster nodes and this is how you can aggregate metrics of all the included sub-domains to a single node. You can also define a list of domains that you want to cluster, if you want to cluster unrelated domains.</p>
+				</div>
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">How is filtering applied ?</a>
+				<div class="cd-faq-content">
+					<p>Each time you filter the graph, you provide a set of conditions related to nodes. You also define whether you want to show or hide the nodes matching the criteria. During the filtering, the provided criteria are tested against each node. In the end, the matched nodes are shown (or hidden), depending on your choice. An edge will be shown after filtering, only if both the destination and the source node of this edge are visible.</p>
+				</div>
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">Is the application fully functional in all browsers ?</a>
+				<div class="cd-faq-content">
+					<p>The ideal browser for the application is Chrome, because it provides the full set of functionalities. All functionalities are also provided in Opera. In Firefox, the only difference is that the body of HTTP requests cannot be captured, due to some APIs not yet implemented by the Firefox team. From our experience, the application has the optimal performance, when executed in Chrome.</p>
+				</div>
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">How can I use the exported data ?</a>
+				<div class="cd-faq-content">
+					<p>The data are exported in .csv format, since it is a standard format that is widely accepted by multiple analytics tools. You can import and analyse the exported graph, using several analytics tools, such as Apache Spark, MapReduce etc. We have experimented importing and analysing the data, using the Neo4j graph database. We will probably soon release some sample scripts that can be used to import the exported data in Neo4j.</p>
+				</div>
+			</li>
+		</ul>
+
+	</div>
+	<a href="#0" class="cd-close-panel">Close</a>
+</section>
+<script src="assets/js/jquery-2.1.1.js"></script>
+<script src="assets/js/jquery.mobile.custom.min.js"></script>
+<script src="assets/js/faq_main.js"></script>
+</body>
+</html>
