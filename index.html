@@ -1,1 +1,276 @@
-Under Construction
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Monitorito - Visualise your web activity</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/buttons.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/media-queries.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+    <body>
+		
+        <!-- Top content -->
+        <div class="top-content">
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                    	<div class="col-sm-5 phone">
+                        	<img src="assets/img/graph.png" alt="">
+                        </div>
+                        <div class="col-sm-7 text">
+                            <h1>Monitorito<br>Visualise your web activity</h1>
+                            <div class="description">
+                            	Wanna see what you visit on the Web ? <br> 
+                            	Monitorito is your tool. It comes with a lot of features. Check it out!
+                            </div>
+                            <div class="top-button">
+                            	<a class="button-1" href="https://chrome.google.com/webstore/detail/monitorito/cpnoiekgkadngaefmiiomndachemdcde">
+                            		<span class="button-1-left browser-img">
+                            			<img src="assets/img/chrome.png"></img>
+                            		</span>
+                            		<span class="button-1-right">
+                            			<span class="button-1-right-top">Available on</span>
+                            			<span class="button-1-right-bottom">Chrome</span>
+                            		</span>
+                            	</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="features-container">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12 features">
+	                    <h2>What you can do with it</h2>
+	                    <p>
+	                    	You can get a nice visualisation of all the websites that you have visited. You can see which websites were visited in the background (without your intention), which are tracking your activity and many more. 
+	                    </p>
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-sm-4 features-box-1">
+	                	<div class="features-box-1-icon">
+	                		<i class="glyphicon glyphicon-search"></i>
+	                	</div>
+	                    <h3>Filterable &amp; Customizable</h3>
+	                    <p>
+	                    	Data can be filtered to isolate and investigate specific parts. The generated visualisation graph can be manipulated, enriching it with new entities.
+	                    </p>
+	                </div>
+	                <div class="col-sm-4 features-box-1">
+	                	<div class="features-box-1-icon">
+	                		<i class="glyphicon glyphicon-align-left"></i>
+	                	</div>
+	                    <h3>Useful Statistics</h3>
+	                    <p>
+	                    	Statistics over the generated visualisation graph are dynamically calculated during the execution. Per-node statistics are also calculated, helping the user to identify domains with specific properties.
+	                    </p>
+	                </div>
+	                <div class="col-sm-4 features-box-1">
+	                	<div class="features-box-1-icon">
+	                		<i class="glyphicon glyphicon-download-alt"></i>
+	                	</div>
+	                    <h3>Exportable Data</h3>
+	                    <p>
+	                    	Both the raw captured data and the visualisation graph can be exported in .csv files. They can be used to analyse the data further in more advanced analytics tools.
+	                    </p>
+	                </div>
+	            </div>
+	        </div>
+        </div>
+        
+        <!-- Single feature -->
+        <div class="single-feature-container single-feature-bg">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12 single-feature-text">
+	                    <h2>Filterable &amp; Customizable</h2>
+	                    <p>
+	                    	Depending on the size of the browsing activity you want to capture, you can enable or disable visualisation for performance reasons. If the visualisation is enabled, you can filter the graph and manipulate it.
+	                    </p>
+	                </div>
+	            </div>
+	            <div class="row">
+	            	<div class="col-sm-7 single-feature-img-description">
+	                    <p>
+	                    	<strong>Filter the visualisation graph to reduce noise</strong> <br>
+	                    	If you visit a lot of websites, the graph's size might obstruct you from identifying desired patterns. Using filters, you can show only parts of the graph that you are interested in.
+	                    </p>
+	                    <p>
+	                    	<strong>Cluster related domains</strong> <br>
+	                    	The application creates a separate node for each visited domain. You might need to observe an aggregated behaviour of several domains. For instance, you might need to cluster all sub-domains of a specific root domain into a single node, or you might even want to cluster domains from different organisations, such as Youtube with Google. 
+	                    </p>
+	                    <p>
+	                    	<strong>Expand resources for a fine-grained analysis</strong> <br>
+	                    	By default, only domain nodes are shown by the application. In order to make a more detailed investigation, you can expand all the resources of a domain and observe where each resource was requested from and what it requested as well.
+	                    </p>
+	                </div>
+	                <div class="col-sm-5 single-feature-img">
+	                    <img src="assets/img/photo1.png" alt="">
+	                </div>
+	            </div>
+	        </div>
+        </div>
+        
+        <!-- Single feature -->
+        <div class="single-feature-container single-feature-no-bg">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12 single-feature-text">
+	                    <h2>Useful Statistics</h2>
+	                    <p>
+	                    	Not all entities of the visualisation are the same. Domain-related statistics are automatically maintained for the generated graph, while there are also per-node metrics, quantifying specific behaviours.
+	                    </p>
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-sm-5 single-feature-img">
+	                    <img src="assets/img/photo2.png" alt="">
+	                </div>
+	                <div class="col-sm-7 single-feature-img-description">
+	                    <p>
+	                    	<strong>Leverage the domain model</strong> <br>
+	                    	Distinguish first-party from third-party domains from the size of a node. Domains you have visited directly (first-party) are bigger. Distinguish between referral (red) and non-referral edges (grey).
+	                    </p>
+	                    <p>
+	                    	<strong>Take advantage of graph statistics</strong> <br>
+	                    	Statistics over the graph are calculated in real time, including percentage of first-party and third-party domains and distribution statistics for different types of edges.
+	                    </p>
+	                    <p>
+	                    	<strong>Use defined metrics to classify domains</strong> <br>
+	                    	Domain-specific metrics calculated for each node can assist characterisation of domains, such as potentially phishing domains, domains that are tracking you browsing activity or domains that are leaking a big part of your activity on them to other websites.
+	                    </p>
+	                </div>
+	            </div>
+	        </div>
+        </div>
+        
+        <!-- Single feature -->
+        <div class="single-feature-container single-feature-bg">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12 single-feature-text">
+	                    <h2>Exportable Data</h2>
+	                    <p>
+	                    	As every application, Monitorito cannot do everything. This is the reason why it is integrated with other analytics tools, by allowing the user to export all data in .csv files.
+	                    </p>
+	                </div>
+	            </div>
+	            <div class="row">
+	            	<div class="col-sm-7 single-feature-img-description">
+	                    <p>
+	                    	<strong>Inspect specific parts of requests</strong> <br>
+	                    	You can look at all requests being made for a specific domain in a table, containing several attributes, such as HTTP request method, resource type, URL, referer and body parameters.
+	                    </p>
+	                    <p>
+	                    	<strong>Export the raw captured data</strong> <br>
+	                    	You can export the raw captured data from the application, including all the requests being made by the browser and the redirects performed.
+	                    </p>
+	                    <p>
+	                    	<strong>Export the generated visualisation graph</strong> <br>
+	                    	You can also export the generated visualisation graph. This contains all the domain nodes, the resources being requested and related cookies, with the corresponding connections. You can import these data in other data analytics tools.
+	                    </p>
+	                </div>
+	                <div class="col-sm-5 single-feature-img">
+	                    <img src="assets/img/photo3.png" alt="">
+	                </div>
+	            </div>
+	        </div>
+        </div>
+        
+        <!-- Call to action -->
+        <div class="call-to-action-container">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12 call-to-action-text">
+	                    <h2>Download it now</h2>
+	                    <p>
+	                    	You can install Monitorito in your browser in 1 step. It is currently available only on Chrome, but hopefully it will soon be available in Opera and Firefox as well.
+	                    </p>
+	                    <div class="call-to-action-button">
+                            <a class="button-1" href="https://chrome.google.com/webstore/detail/monitorito/cpnoiekgkadngaefmiiomndachemdcde">
+                            	<span class="button-1-left browser-img">
+                            		<img src="assets/img/chrome.png"></img>
+                            	</span>
+                            	<span class="button-1-right">
+                            		<span class="button-1-right-top">Available on</span>
+                            		<span class="button-1-right-bottom">Chrome</span>
+                            	</span>
+                            </a>
+                            <a class="button-1" href="#">
+                            	<span class="button-1-left browser-img">
+                            		<img src="assets/img/firefox.png"></img>
+                            	</span>
+                            	<span class="button-1-right">
+                            		<span class="button-1-right-top">Available on</span>
+                            		<span class="button-1-right-bottom">Firefox</span>
+                            	</span>
+                            </a>
+                            <a class="button-1" href="#">
+                            	<span class="button-1-left browser-img">
+                            		<img src="assets/img/opera.png"></img>
+                            	</span>
+                            	<span class="button-1-right">
+                            		<span class="button-1-right-top">Available on</span>
+                            		<span class="button-1-right-bottom">Opera</span>
+                            	</span>
+                            </a>
+                        </div>
+	                </div>
+	            </div>
+	        </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12">
+	                    <div class="footer-copyright">
+	                    	&copy; Monitorito
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+        </footer>
+        
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.10.2.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/retina-1.1.0.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+
+    </body>
+
+</html>
+
