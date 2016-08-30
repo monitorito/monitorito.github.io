@@ -16,8 +16,10 @@
 <section class="cd-faq">
 	<ul class="cd-faq-categories">
 		<li><a class="selected" href="#basics">Basics</a></li>
+		<li><a href="#terminology">Terminology</a></li>
+		<li><a href="#how_it_works">How it works</a></li>
 		<li><a href="#statistics">Statistics</a></li>
-		<li><a href="#other">Other Functionalities</a></li>
+		<li><a href="#other">Other</a></li>
 	</ul>
 
 	<div class="cd-faq-items">
@@ -27,7 +29,7 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">Do I need an account to install the application ?</a>
 				<div class="cd-faq-content">
-					<p>No account is needed to install and use the application. The application is installed as browser extension. So, you only have to first download the browser that you want to use and then install the extension through the Extensions Store of this browser. You can find the corresponding links in the home page.</p>
+					<p>No account is needed to install and use the application. The application is installed as a browser extension. So, you only have to first download the browser that you want to use and then install the extension through the Extensions Store of this browser. You can find the corresponding links for each supported browser in the <a href="index.html">home</a> page.</p>
 				</div>
 			</li>
 			<li>
@@ -50,6 +52,76 @@
 			</li>
 		</ul>
 
+		<ul id="terminology" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Terminology</h2></li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">What is the difference between a root request and an embedded request ?</a>
+				<div class="cd-faq-content">
+					<p>A root request is a request being made directly from the user, such as when the user enters a new URL in the browser bar or when the user clicks at a link in a page. An embedded requests is being made as a dependency of a root request. For instance, when we visit a website, there are multiple requests being made for the images of the page, the scripts and stylesheets needed. All these requests are considered embedded requests, that are being triggered by the root request of the main page.</p>
+				</div>
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">What is a first-party domain and a first-party cookie ?</a>
+				<div class="cd-faq-content">
+					<p>A first-party domain is a domain, containing at least one root request at one of its resources. A first-party cookie is a cookie being sent by a root request.</p>
+				</div>
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">What is a third-party domain and a third-party cookie ?</a>
+				<div class="cd-faq-content">
+					<p>A third-party domain is a domain, containing only embedded requests at its resources. A third-party cookie is a cookie being sent by an embedded request.</p>
+				</div>
+			</li>
+		</ul>
+
+		<ul id="how_it_works" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>How it works</h2></li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">What does the visualised graph represent ?</a>
+				<div class="cd-faq-content">
+					<p>Monitorito captures your browsing activity and represents it in the form of a graph. This graph is mainly consisted of circular nodes, which correspond to the domains you have visited, and edges between these nodes. An edge might correspond to a request being made by a domain to a different domain or to a redirect from a domain to a different domain. The color and style of the edges reveal the events they contain. The user can expand domain nodes, generating a diamond node for each resource of the domain, where all these nodes will be linked to their domain and to each other, depending on the requests and redirects being made. The user can also cluster multiple domain nodes into a single cluster node, which will be a circular node of bigger size than the domain nodes.</p>
+				</div>
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">Why do nodes have different sizes ?</a>
+				<div class="cd-faq-content">
+					<p>Domain nodes have different size, depending on the way you accessed them. First-party domains have bigger size than third-party domains (look above question for different between first-party and third-party domains). The same logic applies to resource nodes as well.</p>
+				</div>
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">Why do edges have different color and styling ?</a>
+				<div class="cd-faq-content">
+					<p>Edges of the graph have different color and styling depending on their properties. If an edge is colored red (or orange for edges between resource nodes), this means that at least one of the requests and redirects included in this edge contains an <a href="https://en.wikipedia.org/wiki/HTTP_referer">HTTP Referer</a> header. If an edge is colored grey (or brown-green for edges between resource nodes), this means that no request or redirect in this edge contains a Referer header. So, the coloring visualises whether the destination node of an edge has acquired knowledge that you have visited the source domain (in other words is "tracking" you). Regarding the styling, if an edge contains only requests, it will be a solid one. If an edge contains only redirects, it will be a dotted one. If an edge contains both requests and redirects, it will be a dashed one. </p>
+				</div>
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">What's the point of "expanding" a domain node ?</a>
+				<div class="cd-faq-content">
+					<p>The default mode of the graph displays the domain nodes and connections between these nodes. This mode is suitable when one wants to get a high-level view of the browsing activity, such as the visited domains and the connections between them. However, if one wants to investigate a specific event in lower level, this mode is not so helpful. For instance, a user might want to investigate the workflow of a specific web protocol, such as OAuth. To achieve this, the user can expand the domain nodes of interest and observe the resource nodes and the edges between them.</p>
+				</div>
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">What's the point of "clustering" different domain nodes ?</a>
+				<div class="cd-faq-content">
+					<p>You can use clustering to aggregate multiple domains, forming a new node. A common case is when you want to handle several sub-domains as a single node. For instance, you might want to cluster all sub-domains of a tracking domain (let's say tracking.com), to aggregate the acquired knowledge of all the sub-domains to a single node, since all the knowledge naturally belongs to the root domain. You can achieve this by providing the root domain in the clustering form. Note that statistics are also calculated for cluster nodes and this is how you can aggregate metrics of all the included sub-domains to a single node. You can also define a list of domains that you want to cluster, if you want to cluster unrelated domains. For instance, you can provide the domains google.com and youtube.com, to aggregate all their sub-domains in a single cluster node, since they belong to the same organisation.</p>
+				</div>
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">How is filtering applied ?</a>
+				<div class="cd-faq-content">
+					<p>Each time you filter the graph, you provide a set of conditions related to nodes. You also define whether you want to show or hide the nodes matching the criteria. During the filtering, the provided criteria are tested against each node. In the end, the matched nodes are shown (or hidden), depending on your choice. An edge will be shown after filtering, only if both the destination and the source node of this edge are visible.</p>
+				</div>
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">What happens to current filters, clusters and expanded domain nodes during active browsing ?</a>
+				<div class="cd-faq-content">
+					<p>If there are active clusters, filters or expanded domain nodes while the user is still browsing to new websites, then the new incoming nodes will be added to the graph without considering them. For instance, a node that would normally belong to a cluster will not be added to it, if the specific domain is visited after the cluster is being created. Another example is incoming nodes that will always be visible and will not be checked by the currently applied filters. As a result, it is recommended that the user applies these functionalities (filtering, clustering, expanding) after having visited the whole dataset of interest. Alternatively, the user can reset filters, clusters and collapse all expanded domain nodes, before visiting new websites.</p>
+				</div>
+			</li>
+		</ul>
+
 		<ul id="statistics" class="cd-faq-group">
 			<li class="cd-faq-title"><h2>Statistics</h2></li>
 
@@ -68,6 +140,13 @@
 				</div>
 			</li>
 			<li>
+				<a class="cd-faq-trigger" href="#0">Can you simply explain the main idea behind the node metrics ?</a>
+				<div class="cd-faq-content">
+					<p>Regarding the phishing websites, we have observed that a significant percentage of phishing domains do not have many connections to other domains (so that they are not easily identified through logs etc.). So, the phishing metric classifies domains, according to the degree of connectivity to the rest of the graph. Regarding tracking, we considered the <a href="https://en.wikipedia.org/wiki/HTTP_referer">HTTP Referer</a> header as the main mechanism of tracking used by websites. So, when a request includes a Referer Header, this means that the destination resource's domain will acquire knowledge that the user linked with the specific cookie has also previously visited the resource denoted by the header field value. As a result, the more incoming referral (red) edges a domain node contains, the more tracking capabilities this domain possesses. Following the same approach, the more outgoing referral (red) edges a domain node contains, the more vulnerable to tracking this domain is. We call these kinds of domains leaking domains, because they "leak" information to tracking domains. 
+					</p>
+				</div>
+			</li>
+			<li>
 				<a class="cd-faq-trigger" href="#0">How are the per-node metrics calculated ?</a>
 				<div class="cd-faq-content">
 					<p>Currently, there are 4 defined per-node metrics and they are calculated as explained below: <br>
@@ -81,26 +160,14 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">Can I define my own node metrics ?</a>
 				<div class="cd-faq-content">
-					<p>Currently, there is not a capability to add new user-defined metrics from the user interface. However, one can easily define a new metric, slightly modifying the source code and the new metric will be accordingly included in all other functionalities, such as filtering. The source code is available <a href="https://github.com/monitorito/monitorito">here</a>.</p>
+					<p>Currently, there is not a capability to add new user-defined metrics from the user interface. However, one can easily define a new metric, slightly modifying the source code and the new metric will be accordingly included in all other functionalities, such as filtering. The source code is available <a href="https://github.com/monitorito/monitorito">here</a>. To add a new metric, just define a new metric <a href="https://github.com/monitorito/monitorito/blob/master/app/scripts/graph/statistics/NodeMetricsFactory.js">here</a>, which complies with the interface of this <a href="https://github.com/monitorito/monitorito/blob/master/app/scripts/graph/statistics/NodeMetric.js">class</a>.</p>
 				</div>
 			</li>
 		</ul>
 
 		<ul id="other" class="cd-faq-group">
-			<li class="cd-faq-title"><h2>Other Functionalities</h2></li>
+			<li class="cd-faq-title"><h2>Other</h2></li>
 
-			<li>
-				<a class="cd-faq-trigger" href="#0">What's the purpose of clustering ?</a>
-				<div class="cd-faq-content">
-					<p>You can use clustering to aggregate multiple domains, forming a new node. A common case is when you want to handle several sub-domains as a single node. You can achieve this by providing the root domain in the clustering form. Note that statistics are also calculated for cluster nodes and this is how you can aggregate metrics of all the included sub-domains to a single node. You can also define a list of domains that you want to cluster, if you want to cluster unrelated domains.</p>
-				</div>
-			</li>
-			<li>
-				<a class="cd-faq-trigger" href="#0">How is filtering applied ?</a>
-				<div class="cd-faq-content">
-					<p>Each time you filter the graph, you provide a set of conditions related to nodes. You also define whether you want to show or hide the nodes matching the criteria. During the filtering, the provided criteria are tested against each node. In the end, the matched nodes are shown (or hidden), depending on your choice. An edge will be shown after filtering, only if both the destination and the source node of this edge are visible.</p>
-				</div>
-			</li>
 			<li>
 				<a class="cd-faq-trigger" href="#0">Is the application fully functional in all browsers ?</a>
 				<div class="cd-faq-content">
@@ -110,7 +177,13 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">How can I use the exported data ?</a>
 				<div class="cd-faq-content">
-					<p>The data are exported in .csv format, since it is a standard format that is widely accepted by multiple analytics tools. You can import and analyse the exported graph, using several analytics tools, such as Apache Spark, MapReduce etc. We have experimented importing and analysing the data, using the Neo4j graph database. We will probably soon release some sample scripts that can be used to import the exported data in Neo4j.</p>
+					<p>The data are exported in .csv format, since it is a standard format that is widely accepted by multiple analytics tools. You can import and analyse the exported graph, using several analytics tools, such as Apache Spark, MapReduce etc. We have experimented importing and analysing the data, using the Neo4j graph database. You can use <a href="https://github.com/monitorito/import_scripts/blob/master/neo4j.import">these scripts</a> as a reference to import the exported graph data from Monitorito to a Neo4j database.</p>
+				</div>
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">Can I visit a very big number of websites with Monitorito ?</a>
+				<div class="cd-faq-content">
+					<p>Monitorito has 2 modes of operation: the online and the offline mode. During the offline mode, the graph is generated and stored but not visualised, so the memory consumption is singificantly reduced. For this reason, if you want to visit bigger datasets with Monitorito, the offline mode is the most suitable and you can export the graph in the end to import it to a more powerful analytics tool. You can also automate this process, so that you do not have to manually visit all the websites in your browser. We have already done this using Selenium and you can find a sample script as a reference <a href="https://github.com/monitorito/automate_script">here</a>.</p>
 				</div>
 			</li>
 		</ul>
