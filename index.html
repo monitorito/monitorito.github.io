@@ -37,10 +37,50 @@
             <div class="inner-bg">
                 <div class="container">
                     <div class="row">
-                    	<div class="col-sm-5 phone">
-                        	<img src="assets/img/graph.png" alt="">
+                    	<div class="col-sm-7 col-md-6 phone" style="text-align:center;">
+							<svg width="100%" height="100%" viewBox="0 0 400 400" preserveAspectRatio="xMaxYMax">
+								<defs>
+									<marker id="grey_arrow" markerWidth="10" markerHeight="10" refx="0" refy="3" orient="auto" markerUnits="strokeWidth">
+										<path d="M0,0 L0,6 L5,3 z" fill="grey" />
+									</marker>
+									<marker id="red_arrow" markerWidth="10" markerHeight="10" refx="0" refy="3" orient="auto" markerUnits="strokeWidth">
+										<path d="M0,0 L0,6 L5,3 z" fill="red" />
+									</marker>
+								</defs>
+
+								<filter id="google" x="0%" y="0%" width="100%" height="100%">
+									<feImage xlink:href="assets/img/domains/google.png"/>
+								</filter>
+								<circle filter="url(#google)" cx="50" cy="50" r="30" />
+
+								<filter id="youtube" x="0%" y="0%" width="100%" height="100%">
+									<feImage xlink:href="assets/img/domains/youtube.png"/>
+								</filter>
+								<circle filter="url(#youtube)" cx="350" cy="50" r="30" />
+
+								<filter id="doubleclick" x="0%" y="0%" width="100%" height="100%">
+									<feImage xlink:href="assets/img/domains/doubleclick.png"/>
+								</filter>
+								<circle filter="url(#doubleclick)" cx="200" cy="200" r="30" />
+
+								<filter id="linkedin" x="0%" y="0%" width="100%" height="100%">
+									<feImage xlink:href="assets/img/domains/linkedin.png"/>
+								</filter>
+								<circle filter="url(#linkedin)" cx="50" cy="350" r="30" />
+
+								<filter id="twitter" x="0%" y="0%" width="100%" height="100%">
+									<feImage xlink:href="assets/img/domains/twitter.png"/>
+								</filter>
+								<circle filter="url(#twitter)" cx="350" cy="350" r="30" />
+
+								<line x1="90" y1="90" x2="160" y2="160" marker-end="url(#grey_arrow)" stroke="grey" stroke-width="2"/>
+								<line x1="310" y1="90" x2="240" y2="160" marker-end="url(#red_arrow)" stroke="red" stroke-width="2"/>
+								<line x1="90" y1="310" x2="160" y2="240" marker-end="url(#red_arrow)" stroke="red" stroke-width="2"/>
+								<line x1="310" y1="310" x2="240" y2="240" marker-end="url(#red_arrow)" stroke="red" stroke-width="2"/>
+								<line x1="110" y1="350" x2="290" y2="350" marker-end="url(#red_arrow)" stroke="red" stroke-width="2"/>
+                        	</svg>
                         </div>
-                        <div class="col-sm-7 text">
+                        <div class="col-sm-5 col-md-6 text">
                             <h1>Monitorito<br>Visualise your web activity</h1>
                             <div class="description">
                             	Wanna see what you visit on the Web ? <br> 
